@@ -1,40 +1,58 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
-    text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    font-family: Arial, sans-serif; /* Fuente de respaldo */
+    text-align: center; /* Texto centrado */
+    margin: 0; /* Quitar margen por defecto */
+    background-color: #FADADD; /* Fondo rosa claro */
 }
 
 #container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura completa de la pantalla */
 }
 
 #image-container {
-    /* This container will hold the images */
+    /* Contenedor para imágenes */
 }
 
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
+    font-family: 'Sacramento', cursive; /* Fuente cursiva para la pregunta */
+    font-size: 52px; /* Tamaño de letra */
 }
 
 #options {
-    margin-top: 20px; /* Add space above the options */
+    margin-top: 20px; /* Espacio sobre los botones */
 }
 
 button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    padding: 10px 20px; /* Relleno de los botones */
+    margin: 0 10px; /* Margen lateral */
+    font-size: 26px; /* Tamaño de letra */
+    font-family: 'Sacramento', cursive; /* Fuente de los botones */
+    background-color: #FB607F; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor tipo mano */
+}
+
+/* --- CORAZONES FLOTANDO --- */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red; /* Color inicial, se reemplaza en JS */
+    clip-path: polygon(50% 0%, 61% 14%, 75% 14%, 84% 25%, 84% 38%, 50% 100%, 16% 38%, 16% 25%, 25% 14%, 39% 14%);
+    pointer-events: none; /* No bloquea clicks */
+    opacity: 0;
+    animation: floatUp 2s forwards;
+    z-index: 1000; /* Aparece encima de todo */
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-150px) scale(1.5); }
 }
