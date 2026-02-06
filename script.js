@@ -59,15 +59,19 @@ function displayCat() {
     };
 }
 
-// Función para mostrar cat-heart.gif
 function displayCatHeart() {
     document.getElementById('image-container').innerHTML = '';
     var imageContainer = document.getElementById('image-container');
     var catHeartImage = new Image();
     catHeartImage.src = 'cat-heart.gif';
     catHeartImage.alt = 'Gato con corazón';
+    
+    // Agregar clase show al cargar para activar animación
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
+        setTimeout(() => {
+            catHeartImage.classList.add('show');
+        }, 50); // pequeño delay para activar transición
         document.getElementById('options').style.display = 'none'; // Ocultar opciones
     };
 }
