@@ -22,22 +22,23 @@ function selectOption(option) {
     }
 }
 
-// Función para mostrar colores arcoíris y luego ejecutar un callback
+// Función para mostrar colores morado y blanco y luego ejecutar un callback
 function flashRainbowColors(callback) {
-    var colors = ['#9400d3', '#c2a9cd', '#9400d3', '#c2a9cd', '#9400d3', '#c2a9cd', '#9400d3'];
+    var colors = ['#9400d3', '#ffffff']; // Morado y blanco
     var i = 0;
     var interval = setInterval(function() {
         document.body.style.backgroundColor = colors[i];
         i = (i + 1) % colors.length;
-    }, 200); // Cambiar color cada 200 ms
+    }, 300); // Cambiar color cada 300 ms
     setTimeout(function() {
         clearInterval(interval);
         document.body.style.backgroundColor = ''; // Resetear color de fondo
         if (callback) {
             callback();
         }
-    }, 2000); // Colorear por 2 segundos
+    }, 2000); // Flashear por 2 segundos
 }
+
 
 // Función para mostrar el cat.gif inicialmente
 function displayCat() {
